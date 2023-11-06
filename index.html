@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="./data.js"></script>
     <script src="./script.js"></script>
 </head>
+
 <body>
-    
+    <div class="card mb-3">
+        <div class="row g-0 height-100">
+            <div class="col-md-4 bg-blue card-aside">
+                <div class="image-container">
+                    <img src="./img/logo.png" class="img-fluid rounded-start logo-image" alt="...">
+                </div>
+                <div class="link-line">
+                    <div class="marker-aside bg-white"></div><a href="#">PHYSIK</a>
+                </div>
+                <div class="link-line">
+                    <div class="marker-aside"></div><a href="#">GESCHICHTE</a>
+                </div>
+                <div class="link-line">
+                    <div class="marker-aside"></div><a href="#">GEOGRAPHIE</a>
+                </div>
+                <div class="link-line">
+                    <div class="marker-aside"></div><a href="#">LITERATUR</a>
+                </div>
+            </div>
+            <div class="col-md-8 welcome-bg">
+                <div class="card-body welcome-body height-100">
+                    <div class="welcome-content">
+                        <h5 class="card-title">Willkommen zum einzigartigen Quiz für dich</h5>
+                        <p class="card-text">Bist du bereit für die Herausforderung?</p>
+                    </div>
+                    <div class="welcome-btn">
+                        <button type="button" class="btn btn-primary">Quiz starten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
