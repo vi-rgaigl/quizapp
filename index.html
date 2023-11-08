@@ -11,36 +11,25 @@
     <script src="./script.js"></script>
 </head>
 
-<body>
-    <div class="card mb-3">
+<body onload="init()">
+    <div class="card mb-3 size-60-60">
         <div class="row g-0 height-100">
-            <div class="col-md-4 bg-blue card-aside">
+            <div class="col-md-4 bg-blue card-aside br-tl-8 br-bl-8">
                 <div class="image-container">
                     <img src="./img/logo.png" class="img-fluid rounded-start logo-image" alt="...">
                 </div>
                 <div class="link-line">
-                    <div class="marker-aside bg-white"></div><a href="#">PHYSIK</a>
-                </div>
+                    <div id="marker_1" class="marker-aside"></div>PHYSIK</div>
                 <div class="link-line">
-                    <div class="marker-aside"></div><a href="#">GESCHICHTE</a>
-                </div>
+                    <div id="marker_2" class="marker-aside"></div>GESCHICHTE</div>
                 <div class="link-line">
-                    <div class="marker-aside"></div><a href="#">GEOGRAPHIE</a>
-                </div>
+                    <div id="marker_3" class="marker-aside"></div>GEOGRAPHIE</div>
                 <div class="link-line">
-                    <div class="marker-aside"></div><a href="#">LITERATUR</a>
-                </div>
+                    <div id="marker_4" class="marker-aside"></div>LITERATUR</div>
             </div>
-            <div class="col-md-8 welcome-bg">
-                <div class="card-body welcome-body height-100">
-                    <div class="welcome-content">
-                        <h5 class="card-title">Willkommen zum einzigartigen Quiz für dich</h5>
-                        <p class="card-text">Bist du bereit für die Herausforderung?</p>
-                    </div>
-                    <div class="welcome-btn">
-                        <button type="button" class="btn btn-primary">Quiz starten</button>
-                    </div>
-                </div>
+
+            <div id="content" class="col-md-8 content content-bg p-32 br-tr-8 br-br-8">              
+                
             </div>
         </div>
     </div>

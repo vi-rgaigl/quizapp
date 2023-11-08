@@ -1,13 +1,15 @@
-let questions_physics = [
+let questions = [
     {
+        "category": "physics",
         "question": "In welcher Einheit wird der elektrische Widerstand gemessen?",
         "answer_1": "Watt",
         "answer_2": "Volt",
-        "answer_2": "Ampere",
+        "answer_3": "Ampere",
         "answer_4": "Ohm",
         "right_answer": 4
     },
     {
+        "category": "physics",
         "question": "Welcher ist der einzige Planet, der die Sonne im Uhrzeigersinn umkreist?",
         "answer_1": "Erde",
         "answer_2": "Venus",
@@ -16,16 +18,16 @@ let questions_physics = [
         "right_answer": 2
     },
     {
+        "category": "physics",
         "question": "Wie lautet das chemische Symbol für Blei?",
         "answer_1": "Bl",
         "answer_2": "Pb",
         "answer_3": "Be",
         "answer_4": "Pt",
         "right_answer": 2
-    }
-];
-let questions_history = [
+    },
     {
+        "category": "history",
         "question": "Wer ist die griechische Götting der Weisheit in der Kriegsführung?",
         "answer_1": "Aphrodite",
         "answer_2": "Hera",
@@ -34,6 +36,7 @@ let questions_history = [
         "right_answer": 3
     },
     {
+        "category": "history",
         "question": "Welche Farbe wurde ursprünglich mit dem St. Patrick's Day assoziiert?",
         "answer_1": "blau",
         "answer_2": "grün",
@@ -42,16 +45,16 @@ let questions_history = [
         "right_answer": 1
     },
     {
+        "category": "history",
         "question": "in welchem Jahr ist Neil Armstrong auf dem Mond gelandet?",
         "answer_1": "1963",
         "answer_2": "1967",
         "answer_3": "1969",
         "answer_4": "Er ist nie auf dem Mond gelandet.",
         "right_answer": 3
-    }
-];
-let questions_geography = [
+    },
     {
+        "category": "geography",
         "question": "Welche dieser Städte ist nicht die Hauptstadt eines Landes?",
         "answer_1": "Wien",
         "answer_2": "Delhi",
@@ -60,6 +63,7 @@ let questions_geography = [
         "right_answer": 3
     },
     {
+        "category": "geography",
         "question": "In welchem Meer liegt die Insel Hawaii?",
         "answer_1": "Atlantischer Ozean",
         "answer_2": "Indischer Ozean",
@@ -68,16 +72,16 @@ let questions_geography = [
         "right_answer": 4
     },
     {
+        "category": "geography",
         "question": "Wie heißt die Hauptstadt von Thüringen?",
         "answer_1": "Magdeburg",
         "answer_2": "Erfurt",
         "answer_3": "Dresden",
         "answer_4": "Potsdam",
         "right_answer": 2
-    }
-];
-let questions_literature = [
+    },
     {
+        "category": "literature",
         "question": "In welcher Stadt spielt Romeo und Julia?",
         "answer_1": "Florenz",
         "answer_2": "Neapel",
@@ -86,6 +90,7 @@ let questions_literature = [
         "right_answer": 4
     },
     {
+        "category": "literature",
         "question": "Was ist ein Oxymoron?",
         "answer_1": "Ein innerer Widerspruch",
         "answer_2": "Ein Versfuß",
@@ -94,6 +99,7 @@ let questions_literature = [
         "right_answer": 1
     },
     {
+        "category": "literature",
         "question": "Welche Adresse ist mit Sherlock Holmes verbunden?",
         "answer_1": "221b Baker Street",
         "answer_2": "Abbey Road 42",
