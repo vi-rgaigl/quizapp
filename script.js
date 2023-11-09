@@ -2,8 +2,8 @@ let currentQuestion = 0;
 let amountRightAnsers = 0;
 
 function init() {
-    // render('./content/welcome.html');
-    render('./content/quiz.html');
+    render('./content/welcome.html');
+    // render('./content/quiz.html');
     // render('./content/result.html');
 }
 
@@ -31,8 +31,11 @@ async function includeHTML(content) {
 }
 
 function checkContent(content) {
-    if (content == './content/quiz.html') {
-        showQuestion();
+    switch (content) {
+        case './content/quiz.html': showQuestion();
+            break;
+        case './content/result.html': setResultRightAnswers();
+            break;
     }
 }
 
@@ -80,11 +83,11 @@ function setMarkerStyle(number) {
 
 function nextQuestion() {
     currentQuestion++;
-    if (checkArrayIndex() == 1) {
+    if (checkArrayIndex()) {
+        showNextQuestion();
+    } else {
         render('./content/result.html');
         currentQuestion = questions.length;
-    } else {
-        showNextQuestion();
     }
 }
 
@@ -96,22 +99,22 @@ function showNextQuestion() {
 }
 
 function unsetAnswerBoxColor() {
-    for(let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 4; i++) {
         document.getElementById(`letter_${i}`).classList.remove('bg-success');
         document.getElementById(`body_answer_${i}`).classList.remove('bg-green');
         document.getElementById(`letter_${i}`).classList.remove('bg-danger');
         document.getElementById(`body_answer_${i}`).classList.remove('bg-red');
         document.getElementById(`letter_${i}`).classList.remove('color-white');
-    }  
+    }
 }
 
 
 function checkArrayIndex() {
-    if (currentQuestion < 0) {
-        return -1;
-    } else if (currentQuestion > questions.length) {
-        return 1;
+    let check = true;
+    if (currentQuestion >= questions.length) {
+        check = false
     }
+    return check;
 }
 
 function checkAnswer(id) {
@@ -143,4 +146,16 @@ function setAnswerBoxColor(color, id) {
 function updateProgressBar() {
     let percent = Math.round(((currentQuestion + 1) / questions.length) * 100);
     document.getElementById('progress_bar').style = `width: ${percent}%`;
+}
+
+function setResultRightAnswers() {
+    document.getElementById('amount_right_answer').innerHTML = amountRightAnsers;
+    document.getElementById('all_questions').innerHTML = questions.length;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    amountRightAnsers = 0;
+    document.getElementById(`marker_4`).classList.remove('bg-white');
+    init();
 }
