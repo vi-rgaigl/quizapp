@@ -1,6 +1,11 @@
-.body {
+body {
     height: 100vh;
     background-color: #FEFAEF;
+    overflow-y: hidden;
+}
+
+.body { 
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,19 +53,13 @@ a {
     border-radius: 8px;
 }
 
-.br-tl-8 {
+.br-aside {
     border-top-left-radius: 8px;
-}
-
-.br-bl-8 {
     border-bottom-left-radius: 8px;
 }
 
-.br-tr-8 {
+.br-content {
     border-top-right-radius: 8px;
-}
-
-.br-br-8 {
     border-bottom-right-radius: 8px;
 }
 
@@ -68,7 +67,7 @@ a {
     margin-top: 16px;
 }
 
-.size-60-60 {
+.size-card {
     width: 60%;
     height: 60%;
 }
@@ -205,4 +204,57 @@ h5 {
     align-items: center;
     justify-content: space-around;
     gap: 32px;
+}
+
+@media (max-width: 1400px) {
+    
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 992px) {
+    .size-card {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+ 
+    .card-aside {
+        height: 38%;
+    }
+    .content {
+        height: 62%;
+    }
+    .br-aside {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+    }
+    
+    .br-content {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .size-card {
+        height: 100%;
+        width: 100%;
+    }
+    .br-aside {
+        border-radius: 0;
+    }
+    
+    .br-content {
+        border-radius: 0;
+    }
+    .br-8 {
+        border-radius: 0;
+    }
 }

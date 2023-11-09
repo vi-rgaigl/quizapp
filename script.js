@@ -3,8 +3,6 @@ let amountRightAnsers = 0;
 
 function init() {
     render('./content/welcome.html');
-    // render('./content/quiz.html');
-    // render('./content/result.html');
 }
 
 function render(content) {
@@ -107,7 +105,6 @@ function unsetAnswerBoxColor() {
         document.getElementById(`letter_${i}`).classList.remove('color-white');
     }
 }
-
 
 function checkArrayIndex() {
     let check = true;
