@@ -91,6 +91,7 @@ function nextQuestion() {
 function showNextQuestion() {
     document.getElementById('next_button').disabled = true;
     unsetAnswerBoxColor();
+    updateProgressBar();
     showQuestion();
 }
 
@@ -137,4 +138,9 @@ function setAnswerBoxColor(color, id) {
     }
     document.getElementById(`letter_${id}`).classList.add('color-white');
     document.getElementById('next_button').disabled = false;
+}
+
+function updateProgressBar() {
+    let percent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+    document.getElementById('progress_bar').style = `width: ${percent}%`;
 }
