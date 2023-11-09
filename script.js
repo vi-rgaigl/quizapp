@@ -1,4 +1,5 @@
 let currentQuestion = 0;
+let amountRightAnsers = 0;
 
 function init() {
     // render('./content/welcome.html');
@@ -25,14 +26,14 @@ async function includeHTML(content) {
         } else {
             element.innerHTML = 'Page not found';
         }
-    }   
+    }
     checkContent(content)
 }
 
 function checkContent(content) {
-    if(content == './content/quiz.html') {
+    if (content == './content/quiz.html') {
         showQuestion();
-    } 
+    }
 }
 
 function showQuestion() {
@@ -40,12 +41,18 @@ function showQuestion() {
     container.innerHTML = questions[currentQuestion]['question'];
     showAnwsers();
     setMarker();
+    setAmountOfQuestion();
 }
 
 function showAnwsers() {
     for (let i = 1; i <= 4; i++) {
         document.getElementById(`answer_${i}`).innerHTML = questions[currentQuestion][`answer_${i}`];
     }
+}
+
+function setAmountOfQuestion() {
+    document.getElementById('current_question_number').innerHTML = currentQuestion + 1;
+    document.getElementById('amount_all_questions').innerHTML = questions.length;
 }
 
 function setMarker() {
@@ -63,47 +70,71 @@ function setMarker() {
 
 function setMarkerStyle(number) {
     for (let i = 1; i <= 4; i++) {
-        if(i == number) {
+        if (i == number) {
             document.getElementById(`marker_${number}`).classList.add('bg-white');
         } else {
             document.getElementById(`marker_${i}`).classList.remove('bg-white');
-        }      
+        }
     }
 }
 
 function nextQuestion() {
     currentQuestion++;
-    if(checkArrayIndex() == 1) {
+    if (checkArrayIndex() == 1) {
         render('./content/result.html');
         currentQuestion = questions.length;
     } else {
-        showQuestion();
-    }   
+        showNextQuestion();
+    }
 }
 
-function breviousQuestion() {
-    currentQuestion--;
-    if(checkArrayIndex() == -1) {
-        render('./content/welcome.html');
-        currentQuestion = 0;
-    } else {
-        showQuestion();
+function showNextQuestion() {
+    document.getElementById('next_button').disabled = true;
+    unsetAnswerBoxColor();
+    showQuestion();
+}
+
+function unsetAnswerBoxColor() {
+    for(let i = 1; i <= 4; i++) {
+        document.getElementById(`letter_${i}`).classList.remove('bg-success');
+        document.getElementById(`body_answer_${i}`).classList.remove('bg-green');
+        document.getElementById(`letter_${i}`).classList.remove('bg-danger');
+        document.getElementById(`body_answer_${i}`).classList.remove('bg-red');
+        document.getElementById(`letter_${i}`).classList.remove('color-white');
     }  
 }
 
+
 function checkArrayIndex() {
-    if(currentQuestion < 0) {
+    if (currentQuestion < 0) {
         return -1;
-    } else if(currentQuestion > questions.length) {
+    } else if (currentQuestion > questions.length) {
         return 1;
     }
 }
 
 function checkAnswer(id) {
     let currentRightAnswer = questions[currentQuestion]['right_answer'];
-    if(id == currentRightAnswer) {
-        console.log('Richtig');
+    if (id == currentRightAnswer) {
+        setAnswerBoxColor('green', id);
+        amountRightAnsers++;
     } else {
-        console.log('Falsch');
+        setAnswerBoxColor('red', id);
+        setAnswerBoxColor('green', currentRightAnswer);
     }
+}
+
+function setAnswerBoxColor(color, id) {
+    switch (color) {
+        case 'green':
+            document.getElementById(`letter_${id}`).classList.add('bg-success');
+            document.getElementById(`body_answer_${id}`).classList.add('bg-green');
+            break;
+        case 'red':
+            document.getElementById(`letter_${id}`).classList.add('bg-danger');
+            document.getElementById(`body_answer_${id}`).classList.add('bg-red');
+            break;
+    }
+    document.getElementById(`letter_${id}`).classList.add('color-white');
+    document.getElementById('next_button').disabled = false;
 }

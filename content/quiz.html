@@ -28,7 +28,7 @@
     </div>
 
     <div class="button-line">
-        <button onclick="breviousQuestion()" type="button" class="btn btn-secondary next-button">&#8249;</button>
-        <button onclick="nextQuestion()" type="button" class="btn btn-secondary next-button">&#8250;</button>
+        <div><span id="current_question_number"></span> von <span id="amount_all_questions"></span> Fragen</div>
+        <button id="next_button" onclick="nextQuestion()" disabled type="button" class="btn btn-secondary next-button">&#8250;</button>
     </div>
 </div>

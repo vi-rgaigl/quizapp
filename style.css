@@ -15,6 +15,18 @@ body {
     background-color: white;
 }
 
+.bg-green {
+    background-color: lightgreen;
+}
+
+.bg-red {
+    background-color: lightcoral;
+}
+
+.color-white {
+    color: white;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -39,12 +51,15 @@ a {
 .br-tl-8 {
     border-top-left-radius: 8px;
 }
+
 .br-bl-8 {
     border-bottom-left-radius: 8px;
 }
+
 .br-tr-8 {
     border-top-right-radius: 8px;
 }
+
 .br-br-8 {
     border-bottom-right-radius: 8px;
 }
@@ -52,6 +67,7 @@ a {
 .mt-16 {
     margin-top: 16px;
 }
+
 .size-60-60 {
     width: 60%;
     height: 60%;
@@ -151,7 +167,7 @@ h5 {
 }
 
 .answer-line:hover {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .answer-letter {
