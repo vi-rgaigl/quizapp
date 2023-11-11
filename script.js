@@ -31,9 +31,12 @@ async function includeHTML(content) {
 
 function checkContent(content) {
     switch (content) {
-        case './content/quiz.html': showQuestion();
+        case './content/quiz.html': 
+            showQuestion();
             break;
-        case './content/result.html': setResultRightAnswers();
+        case './content/result.html':
+            updateProgressBar();
+            setResultRightAnswers();
             break;
     }
 }
@@ -156,6 +159,7 @@ function restartQuiz() {
     currentQuestion = 0;
     amountRightAnsers = 0;
     percent = 0;
+    updateProgressBar();
     document.getElementById(`marker_4`).classList.remove('bg-white');
     init();
 }
