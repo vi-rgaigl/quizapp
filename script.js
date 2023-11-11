@@ -1,5 +1,6 @@
 let currentQuestion = 0;
 let amountRightAnsers = 0;
+let percent = 0;
 
 function init() {
     render('./content/welcome.html');
@@ -141,8 +142,9 @@ function setAnswerBoxColor(color, id) {
 }
 
 function updateProgressBar() {
-    let percent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+    percent = Math.round(((currentQuestion) / questions.length) * 100);
     document.getElementById('progress_bar').style = `width: ${percent}%`;
+    document.getElementById('progress_bar').innerHTML = `${percent}%`;
 }
 
 function setResultRightAnswers() {
@@ -153,6 +155,7 @@ function setResultRightAnswers() {
 function restartQuiz() {
     currentQuestion = 0;
     amountRightAnsers = 0;
+    percent = 0;
     document.getElementById(`marker_4`).classList.remove('bg-white');
     init();
 }
