@@ -89,14 +89,13 @@ function setMarkerStyle(number) {
 }
 
 function highlightTest(number) {
+    document.getElementById(`link_line_${number}`).style = "color: white";
+}
+
+function unsetHighlightText() {
     for (let i = 1; i <= 4; i++) {
-        if (i == number) {
-            document.getElementById(`link_line_${number}`).style = "color: white";
-        } else {
-            document.getElementById(`link_line_${i}`).style = "color: rgb(132, 131, 131)";
-        }
+        document.getElementById(`link_line_${i}`).style = "color: #27355C";
     }
-    
 }
 
 function nextQuestion() {
@@ -193,5 +192,6 @@ function restartQuiz() {
     percent = 0;
     updateProgressBar();
     document.getElementById(`marker_4`).classList.remove('bg-white');
-    init();
+    unsetHighlightText();
+    render('./content/quiz.html');
 }

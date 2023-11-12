@@ -110,7 +110,7 @@ h5 {
     align-items: center;
     gap: 24px;
     height: 30px;
-    color: rgb(132, 131, 131);
+    color: #27355C;
 }
 
 .marker-aside {
@@ -245,7 +245,7 @@ h5 {
 @media (max-width: 768px) {
  
     .card-aside {
-        height: 38%;
+        flex-direction: row;
     }
     .content {
         height: 62%;
@@ -264,6 +264,9 @@ h5 {
 }
 
 @media (max-width: 576px) {
+    .body {
+        margin-top: 0.5rem;
+    }
     .size-card {
         height: 100%;
         width: 100%;
@@ -282,3 +285,34 @@ h5 {
         padding: 0;
     }
 }
+
+@media (max-width: 400px) {
+    .body {
+        height: 98%;
+    }
+
+    .mt-16 {
+        margin-top: 0;
+    }
+
+    .content {
+        height: 74%;
+    }
+    .image-container {
+        margin-top: 0;
+    }
+
+    .img-fluid {
+        max-width: unset;
+    }
+    .logo-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .answer-letter {
+        height: 32px;
+        width: 32px;
+    }
+}
+
