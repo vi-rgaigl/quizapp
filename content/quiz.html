@@ -1,25 +1,25 @@
 <div class="quiz-body">
     <div class="questions">
         <h5 id="question"></h5>
-        <div id="body_answer_1" onclick="checkAnswer(1)" class="card mt-16">
+        <div id="body_answer_1" onclick="checkAnswer(1)" class="card mt-16 cursor">
             <div class="card-body answer-line">
                 <div id="letter_1" class="answer-letter">A</div>
                 <span id="answer_1"></span>
             </div>
         </div>
-        <div id="body_answer_2" onclick="checkAnswer(2)" class="card mt-16">
+        <div id="body_answer_2" onclick="checkAnswer(2)" class="card mt-16 cursor">
             <div class="card-body answer-line">
                 <div id="letter_2" class="answer-letter">B</div>
                 <span id="answer_2"></span>
             </div>
         </div>
-        <div id="body_answer_3" onclick="checkAnswer(3)" class="card mt-16">
+        <div id="body_answer_3" onclick="checkAnswer(3)" class="card mt-16 cursor">
             <div class="card-body answer-line">
                 <div id="letter_3" class="answer-letter">C</div>
                 <span id="answer_3"></span>
             </div>
         </div>
-        <div id="body_answer_4" onclick="checkAnswer(4)" class="card mt-16">
+        <div id="body_answer_4" onclick="checkAnswer(4)" class="card mt-16 cursor">
             <div class="card-body answer-line">
                 <div id="letter_4" class="answer-letter">D</div>
                 <span id="answer_4"></span>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="button-line">
-        <div><span id="current_question_number"></span> von <span id="amount_all_questions"></span> Fragen</div>
+        <div>Frage <span id="current_question_number"></span> von <span id="amount_all_questions"></span></div>
         <button id="next_button" onclick="nextQuestion()" disabled type="button" class="btn btn-secondary next-button"><img class="next_button_img" src="./img/next.png" alt=""></button>
     </div>
 </div>

@@ -47,6 +47,7 @@ function showQuestion() {
     showAnwsers();
     setMarker();
     setAmountOfQuestion();
+    addOnclickAttributte();
 }
 
 function showAnwsers() {
@@ -63,12 +64,16 @@ function setAmountOfQuestion() {
 function setMarker() {
     switch (questions[currentQuestion]['category']) {
         case 'physics': setMarkerStyle(1);
+            highlightTest(1);
             break;
-        case 'history': setMarkerStyle(2);;
+        case 'history': setMarkerStyle(2);
+        highlightTest(2);
             break;
-        case 'geography': setMarkerStyle(3);;
+        case 'geography': setMarkerStyle(3);
+        highlightTest(3);
             break;
-        case 'literature': setMarkerStyle(4);;
+        case 'literature': setMarkerStyle(4);
+        highlightTest(4);
             break;
     }
 }
@@ -81,6 +86,17 @@ function setMarkerStyle(number) {
             document.getElementById(`marker_${i}`).classList.remove('bg-white');
         }
     }
+}
+
+function highlightTest(number) {
+    for (let i = 1; i <= 4; i++) {
+        if (i == number) {
+            document.getElementById(`link_line_${number}`).style = "color: white";
+        } else {
+            document.getElementById(`link_line_${i}`).style = "color: rgb(132, 131, 131)";
+        }
+    }
+    
 }
 
 function nextQuestion() {
@@ -123,9 +139,25 @@ function checkAnswer(id) {
     if (id == currentRightAnswer) {
         setAnswerBoxColor('green', id);
         amountRightAnsers++;
+        removeOnclickAttribute();
     } else {
         setAnswerBoxColor('red', id);
         setAnswerBoxColor('green', currentRightAnswer);
+        removeOnclickAttribute();
+    }
+}
+
+function removeOnclickAttribute() {
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById(`body_answer_${i}`).removeAttribute('onclick');
+        document.getElementById(`body_answer_${i}`).classList.remove('cursor');
+    }
+}
+
+function addOnclickAttributte() {
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById(`body_answer_${i}`).setAttribute('onclick', `checkAnswer(${i})`);
+        document.getElementById(`body_answer_${i}`).classList.add('cursor');
     }
 }
 

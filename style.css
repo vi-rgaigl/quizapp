@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     height: 100vh;
     background-color: #FEFAEF;
     overflow-y: hidden;
@@ -109,6 +110,7 @@ h5 {
     align-items: center;
     gap: 24px;
     height: 30px;
+    color: rgb(132, 131, 131);
 }
 
 .marker-aside {
@@ -174,8 +176,12 @@ h5 {
     gap: 16px;
 }
 
+.cursor {
+    cursor: pointer;
+}
+
 .answer-line:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); 
 }
 
 .answer-letter {
